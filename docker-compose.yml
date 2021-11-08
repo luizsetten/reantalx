@@ -17,6 +17,7 @@ services:
   app:
     build: .
     container_name: "rentx"
+    restart: always
     links:
       - database
     depends_on:
