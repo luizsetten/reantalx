@@ -6,6 +6,7 @@ class ListCategoriesController {
     const listCategoriesUseCase = container.resolve(ListCategoriesUseCase);
 
     const all = listCategoriesUseCase.execute();
+    console.log("Todas as categorias", all)
 
     return response.json(all);
   }
