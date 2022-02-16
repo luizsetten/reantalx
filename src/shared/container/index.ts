@@ -6,7 +6,13 @@ import { ICategoriesRepository } from '@modules/cars/repositories/ICategoriesRep
 import { CategoriesRepository } from '@modules/cars/infra/typeorm/repositories/CategoriesRepository';
 import { SpecificationsRepository } from '@modules/cars/infra/typeorm/repositories/SpecificationsRepository';
 import { ISpecificationsRepository } from '@modules/cars/repositories/ISpecificationsRepository';
+import { ICarsRepository } from '@modules/cars/repositories/ICarsRepository';
+import { CarsRepositoryInMemory } from '@modules/cars/repositories/in-memory/CarsRepositoryInMemory';
 
+container.registerSingleton<ICarsRepository>(
+  "CarsRepository",
+  CarsRepositoryInMemory
+);
 
 container.registerSingleton<ICategoriesRepository>(
   "CategoriesRepository",
